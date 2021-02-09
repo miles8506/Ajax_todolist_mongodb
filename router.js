@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Todo = require('./mongo/todo.js');
+
+
 //todo-查
 router.get('/todo/task', (req, res, next) => {
     Todo.find((err, data) => {
@@ -10,6 +12,7 @@ router.get('/todo/task', (req, res, next) => {
         res.send(data);
     });
 });
+
 
 //todo-增
 router.post('/todo/addTask', (req, res, next) => {
@@ -26,6 +29,7 @@ router.post('/todo/addTask', (req, res, next) => {
         });
     }, 300);
 });
+
 
 //todo-刪
 router.get('/todo/deleteTask', (req, res, next) => {
@@ -82,5 +86,6 @@ router.get('/todo/clearCompleted', (req, res) => {
         res.send(data);
     })
 })
+
 
 module.exports = router;

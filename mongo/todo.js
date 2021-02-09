@@ -12,13 +12,3 @@ const TodoSchema = new Schema({
     }
 }, { versionKey: false });
 module.exports = mongoose.model('Todo', TodoSchema);
-// const test = mongoose.model('Todo', TodoSchema);
-// test({
-//     title: "打豆豆"
-// }).save();
-// test.find((err, data) => {
-//     if (err) {
-//         return console.log('err');
-//     }
-//     console.log(data);
-// })

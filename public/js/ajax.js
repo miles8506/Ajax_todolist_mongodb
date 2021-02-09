@@ -1,4 +1,6 @@
 let todoArr = [];
+
+
 //查
 $.ajax({
     type: 'get',
@@ -9,6 +11,8 @@ $.ajax({
         amount(todoArr);
     }
 });
+
+
 //增
 $('#task').on('keyup', function (e) {
     if (e.keyCode == 13) {
@@ -32,6 +36,8 @@ $('#task').on('keyup', function (e) {
         };
     };
 });
+
+
 //刪
 $('#todo-list').on('click', '.destroy', function () {
     const id = $(this).attr("id");
@@ -53,6 +59,7 @@ $('#todo-list').on('click', '.destroy', function () {
         }
     });
 });
+
 
 //改-checkbox
 $('.todo-list').on('click', '.check', function () {
@@ -174,7 +181,9 @@ const result = function (arr) {
     });
     $('#todo-list').html(html);
 };
-//todo數量
+
+
+//todo數量封裝
 const amount = function (arr) {
     const Arr = arr.length;
     $('#count').text(Arr);
