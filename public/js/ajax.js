@@ -1,5 +1,13 @@
 let todoArr = [];
 
+//loading進度條
+$(document).on('ajaxStart', function () {
+    NProgress.start()
+})
+$(document).on('ajaxComplete', function () {
+    NProgress.done()
+})
+
 
 //查
 $.ajax({
